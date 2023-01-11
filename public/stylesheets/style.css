@@ -2,3 +2,18 @@ a {
   text-decoration: none;
   color: #fff;
 }
+
+/* a標籤 */
+button:hover a {
+  color: black;
+}
+
+/* 按鈕被選擇時，按鈕背景色為黑色 */
+button.selected {
+  background-color: #111 !important;
+}
+
+/* 如果按鈕被選擇，按鈕下的a標籤字體顏色依然維持白色 */
+button.selected:hover a {
+  color: #fff;
+}

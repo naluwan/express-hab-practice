@@ -1,23 +1,26 @@
 <div class="p-5">
   <div class="d-flex justify-content-between">
-    <button class="btn btn-secondary">
-      <a href="/">首頁</a>
+                                      {{!-- 如果currentPage等於首頁，才加入selected class --}}
+    <button class="btn btn-secondary {{#ifCond currentPage '首頁'}}selected{{/ifCond}}">
+                  {{!-- 如果currentPage等於首頁，就顯示首頁，否則顯示返回首頁 --}}
+      <a href="/">{{#ifCond currentPage '首頁'}}首頁{{else}}返回首頁{{/ifCond}}</a>
     </button>
     <div>
-      <button class="btn btn-secondary mx-2">
+      <button class="btn btn-secondary mx-2 {{#ifCond currentPage 'About'}}selected{{/ifCond}}">
         <a href="/about">About</a>
       </button>
 
-      <button class="btn btn-secondary mx-2">
+      <button class="btn btn-secondary mx-2 {{#ifCond currentPage 'ProfileInfo'}}selected{{/ifCond}}">
         <a href="/profileInfo">ProfileInfo</a>
       </button>
 
-      <button class="btn btn-secondary mx-2">
+      <button class="btn btn-secondary mx-2 {{#ifCond currentPage 'Contact'}}selected{{/ifCond}}">
         <a href="/contact">Contact</a>
       </button>
     </div>
   </div>
 
+{{!-- 顯示router傳入的參數currentPage --}}
   <div class="pt-5">
     <h1>
       {{currentPage}}
