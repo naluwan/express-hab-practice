@@ -14,6 +14,10 @@ app.set("view engine", "hbs");
 // 設定express取用靜態檔案
 app.use(express.static("public"));
 
+app.get("/", (req, res) => {
+  res.render("index", { currentPage: "首頁" });
+});
+
 // 監聽啟動的伺服器
 app.listen(port, () => {
   console.info(`chatBot listening on port http://localhost:${port}`);
